@@ -96,8 +96,8 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 24px;
-    min-height: 100vh;
+    padding: 40px 24px 24px;
+    min-height: auto;
     display: flex;
     flex-direction: column;
 }
@@ -260,7 +260,6 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 20px;
-    flex: 1;
 }
 
 /* ===== Script Card ===== */

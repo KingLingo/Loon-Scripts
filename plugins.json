@@ -1,0 +1,37 @@
+{
+  "categories": [
+    {
+      "id": "sms",
+      "name": "短信相关",
+      "icon": "message-circle",
+      "description": "短信转发与管理类插件"
+    },
+    {
+      "id": "tools",
+      "name": "实用工具",
+      "icon": "tool",
+      "description": "各类实用工具插件"
+    },
+    {
+      "id": "ads",
+      "name": "去广告",
+      "icon": "shield",
+      "description": "广告过滤与屏蔽插件"
+    }
+  ],
+  "plugins": [
+    {
+      "id": "sms-forward",
+      "name": "短信转发到Gotify",
+      "description": "利用腾讯手机管家将短信转发到 Gotify 服务器，实现短信实时推送通知",
+      "author": "KingLin",
+      "icon": "https://gotify.6sir.cn/image/EbInviCmdrsK4mFPKyyxdB6_t.png",
+      "category": "sms",
+      "path": "plugins/sms/sms-forward.plugin",
+      "version": "1.0.0",
+      "loonVersion": "3.2.1(734)",
+      "tags": ["短信", "推送", "Gotify"],
+      "updated": "2024-12-24"
+    }
+  ]
+}

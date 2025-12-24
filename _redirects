@@ -1,0 +1,5 @@
+# Cloudflare Pages Redirects
+# 保持插件路径的兼容性
+
+# 如果有旧的插件路径，可以在这里添加重定向
+# /old-path /new-path 301

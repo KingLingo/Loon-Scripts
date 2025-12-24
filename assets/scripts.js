@@ -205,27 +205,46 @@ function escapeHtml(text) {
 }
 
 /**
- * Copy text to clipboard
+ * Copy text to clipboard and optionally open Loon app
  */
-async function copyToClipboard(text) {
+async function copyToClipboard(pluginUrl) {
+    // Copy to clipboard first
     try {
-        await navigator.clipboard.writeText(text);
-        showToast('已复制到剪贴板');
+        await navigator.clipboard.writeText(pluginUrl);
     } catch (err) {
         // Fallback for older browsers
         const textarea = document.createElement('textarea');
-        textarea.value = text;
+        textarea.value = pluginUrl;
         textarea.style.position = 'fixed';
         textarea.style.left = '-9999px';
         document.body.appendChild(textarea);
         textarea.select();
         try {
             document.execCommand('copy');
-            showToast('已复制到剪贴板');
         } catch (e) {
             showToast('复制失败，请手动复制', 'error');
+            return;
         }
         document.body.removeChild(textarea);
+    }
+
+    // Check if on mobile device (iOS)
+    const isMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // Build Loon URL Scheme
+        const loonUrl = `loon://import?plugin=${encodeURIComponent(pluginUrl)}`;
+
+        // Show toast and redirect
+        showToast('正在跳转到 Loon...');
+
+        // Delay slightly to show toast, then redirect
+        setTimeout(() => {
+            window.location.href = loonUrl;
+        }, 300);
+    } else {
+        // On desktop, just show copy success
+        showToast('已复制到剪贴板');
     }
 }
 

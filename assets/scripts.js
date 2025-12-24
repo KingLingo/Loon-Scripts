@@ -148,7 +148,7 @@ function createPluginCard(plugin, index) {
         <div class="card-header">
             <div class="card-icon">
                 ${plugin.icon
-            ? `<img src="${plugin.icon}" alt="${plugin.name}" loading="lazy" onerror="this.parentElement.innerHTML='${ICONS.tool}'">`
+            ? `<img src="${plugin.icon}" alt="${plugin.name}" loading="lazy" onerror="this.style.display='none'">`
             : ICONS.tool
         }
             </div>

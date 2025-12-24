@@ -1,0 +1,10 @@
+#!name = 电改模拟器已授权
+#!desc = 绕过getTool验证
+#!author = KingLin
+#!icon = https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/icons/tools/dgmnq.png
+
+[MITM]
+hostname = yjswrj.cn
+
+[Script]
+http-response ^https?:\/\/yjswrj\.cn\/getTools script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/dgmnq-gettools.js, requires-body=true, timeout=10, tag=YJS-getTools-fix, enable=true

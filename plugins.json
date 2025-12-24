@@ -51,6 +51,21 @@
                 "工具"
             ],
             "updated": "2024-12-24"
+        },
+        {
+            "id": "dgmnq",
+            "name": "电改模拟器已授权",
+            "description": "绕过 getTools 验证，模拟已授权状态（仅供学习研究）",
+            "author": "KingLin",
+            "icon": "https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/icons/tools/dgmnq.png",
+            "category": "tools",
+            "path": "plugins/tools/dgmnq.plugin",
+            "version": "1.0.0",
+            "tags": [
+                "工具",
+                "模拟器"
+            ],
+            "updated": "2024-12-24"
         }
     ]
 }

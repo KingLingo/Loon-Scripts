@@ -1,7 +1,7 @@
 #!name = 新能充电
 #!desc = 修改余额和免费时长
 #!author = KingLin
-#!icon = http://mmbiz.qpic.cn/mmbiz_png/KnwKNZ56ScwAPpYN6qKEXib8Be0hE72NqUH4ZLt5RicctxN2llgBSiclBXibBU743OYacIC18w0ViagPrAeZA36SaoA/0?wx_fmt=png
+#!icon = https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/icons/tools/xn-charge.png
 
 [Script]
 http-request ^http:\/\/www\.szlzxn\.cn\/wxn\/.*$ script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/xn-charge-req.js, requires-body=true, timeout=10, tag=修改请求体

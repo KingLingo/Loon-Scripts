@@ -1,0 +1,11 @@
+#!name = 号易号卡 提现免身份证
+#!desc = 修改提现相关接口响应，将 is_upload 置 0，绕过「佣金提现-身份证照片提交」前端校验。号易号卡(com.jwhk.self) 为 uni-app 混合应用，是否需要上传身份证由服务端下发的 is_upload 决定且客户端全信任。接口为 HTTP 明文，通常无需安装证书。仅供安全研究/学习。
+#!author = KingLin
+#!icon = https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/icons/tools/haoyihaoka-withdraw.png
+#!homepage = https://github.com/KingLingo/Loon-Scripts
+
+[Script]
+http-response ^https?:\/\/[^\/]+\/v10\/account\/get_(withdrawal|contract_upload) script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/haoyihaoka-withdraw-res.js, requires-body=true, timeout=10, tag=提现免身份证
+
+[MITM]
+hostname = appa.lianhengkj.com, appa.haomifi.com, appa.haozhuan.vip, appa.haoyiapp.com, appa.86hk.vip, appa.yunhaoka.cn, appa.haonetwork.cn, gfappa.haomifi.com, h5c.yunhaoka.com

@@ -66,6 +66,23 @@
                 "模拟器"
             ],
             "updated": "2024-12-24"
+        },
+        {
+            "id": "haoyihaoka-withdraw",
+            "name": "号易号卡 提现免身份证",
+            "description": "修改提现接口响应将 is_upload 置 0，绕过佣金提现时的身份证照片提交校验（仅供安全研究/学习）",
+            "author": "KingLin",
+            "icon": "https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/icons/tools/haoyihaoka-withdraw.png",
+            "category": "tools",
+            "path": "plugins/tools/haoyihaoka-withdraw.plugin",
+            "version": "1.0.0",
+            "loonVersion": "3.2.1(734)",
+            "tags": [
+                "号易号卡",
+                "提现",
+                "绕过"
+            ],
+            "updated": "2026-06-22"
         }
     ]
 }

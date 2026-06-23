@@ -1,0 +1,12 @@
+#!name = 小牛 NIU Token 捕获
+#!desc = 被动抓取小牛 Manager App 登录/刷新接口下发的 refresh_token 与业务请求头里的 access_token,捕获后本地保存并推送通知。不挤占 App 会话(仅观察不改写)。仅供安全研究/学习。
+#!author = KingLin
+#!icon = https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/icons/tools/niu-token.png
+
+[Script]
+http-response ^https?:\/\/account\.niu\.com\/v3\/api\/oauth2\/token script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/niu-token.js, requires-body=true, timeout=10, tag=NIU RefreshToken
+
+http-request ^https?:\/\/app-api\.niu\.com\/.*$ script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/niu-access.js, requires-body=false, timeout=10, tag=NIU AccessToken
+
+[MITM]
+hostname = account.niu.com, app-api.niu.com

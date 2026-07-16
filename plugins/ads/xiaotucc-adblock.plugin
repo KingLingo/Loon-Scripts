@@ -1,0 +1,30 @@
+#!name = 小兔充充 去广告
+#!desc = 屏蔽小兔充充小程序的开屏/首页/我的页/充电页 banner、插屏、推啊互动广告及第三方广告联盟与埋点。不影响充电、支付、地图、图片与激励视频奖励。逆向自小程序包(ad.xiaotucc.com/advert/* 为独立广告域名,与核心 mapi.xiaotucc.com 分离)。
+#!author = KingLin
+#!icon = https://i.xiaotucc.com/account_logo
+#!date = 2026-07-16
+#!homepage = https://loon.6sir.cn
+
+[Rule]
+# —— 小兔充充自投放广告(独立广告域名,整域名拒绝安全)——
+DOMAIN,ad.xiaotucc.com,REJECT
+DOMAIN,ad.xtccdev.cn,REJECT
+# —— 第三方广告联盟 ——
+DOMAIN-SUFFIX,tuia.cn,REJECT
+DOMAIN-SUFFIX,tuisnake.com,REJECT
+DOMAIN,embedlog.duiba.com.cn,REJECT
+DOMAIN-SUFFIX,adyounger.com,REJECT
+DOMAIN,i.miniyounger.com,REJECT
+DOMAIN-SUFFIX,aoclia.com,REJECT
+# —— 埋点/统计(可选,不影响功能)——
+DOMAIN-SUFFIX,umeng.com,REJECT
+DOMAIN,umini.shujupie.com,REJECT
+
+[Rewrite]
+# 兜底:若 advert 接口挪到主域名,按路径静默返回空
+^https?:\/\/[^/]*\.xiaotucc\.com\/.*advert\/(getPosition|exposure|click|postData|tui_a) reject-dict
+# i. 图片CDN 内只挡广告位图,不碰 UI 图标
+^https?:\/\/i\.xiaotucc\.com\/ad_post\d reject-img
+
+[MITM]
+hostname = %APPEND% *.xiaotucc.com

@@ -100,6 +100,23 @@
                 "Token"
             ],
             "updated": "2026-06-23"
+        },
+        {
+            "id": "xiaotucc-adblock",
+            "name": "小兔充充 去广告",
+            "description": "屏蔽小兔充充小程序开屏/首页/我的页/充电页 banner、插屏、推啊互动广告及第三方广告联盟与埋点;不影响充电、支付、图片与激励视频奖励(逆向自小程序包,ad.xiaotucc.com 独立广告域名)",
+            "author": "KingLin",
+            "icon": "https://i.xiaotucc.com/account_logo",
+            "category": "ads",
+            "path": "plugins/ads/xiaotucc-adblock.plugin",
+            "version": "1.0.0",
+            "loonVersion": "3.2.1(734)",
+            "tags": [
+                "小兔充充",
+                "去广告",
+                "充电"
+            ],
+            "updated": "2026-07-16"
         }
     ]
 }

@@ -117,6 +117,24 @@
                 "充电"
             ],
             "updated": "2026-07-16"
+        },
+        {
+            "id": "xtcc-hijack",
+            "name": "小兔充充 余额伪造",
+            "description": "劫持登录响应注入 uid=4 + 500 余额，伪造充电订单（仅供安全研究/学习）",
+            "author": "KingLin",
+            "icon": "https://i.xiaotucc.com/account_logo",
+            "category": "tools",
+            "path": "plugins/tools/xtcc-hijack.plugin",
+            "version": "1.0.0",
+            "loonVersion": "3.2.1(734)",
+            "tags": [
+                "小兔充充",
+                "余额",
+                "伪造",
+                "劫持"
+            ],
+            "updated": "2026-10-26"
         }
     ]
 }

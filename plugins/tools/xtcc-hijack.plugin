@@ -1,0 +1,17 @@
+#!name = 小兔充充 余额伪造
+#!desc = 劫持登录响应注入 uid=4 + 500 余额，伪造充电订单（仅供安全研究/学习）
+#!author = KingLin
+#!icon = https://i.xiaotucc.com/account_logo
+
+[Script]
+http-response ^https://mapi\.xiaotucc\.com/we/user/base/login script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/xtcc-hijack.js, requires-body=true, timeout=10, tag=登录劫持
+http-response ^https://mapi\.xiaotucc\.com/we/wallet/index/balance script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/xtcc-hijack.js, requires-body=true, timeout=10, tag=钱包伪造
+http-response ^https://mapi\.xiaotucc\.com/we/wallet/index/gold script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/xtcc-hijack.js, requires-body=true, timeout=10, tag=充电金伪造
+http-response ^https://mapi\.xiaotucc\.com/we/user/user_device/list script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/xtcc-hijack.js, requires-body=true, timeout=10, tag=设备列表伪造
+http-response ^https://mapi\.xiaotucc\.com/we/order/chargeRecord script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/xtcc-hijack.js, requires-body=true, timeout=10, tag=订单伪造
+http-response ^https://mapi\.xiaotucc\.com/we/user/vip/info script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/xtcc-hijack.js, requires-body=true, timeout=10, tag=VIP伪造
+http-response ^https://mapi\.xiaotucc\.com/we/user/coupon/discountList script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/xtcc-hijack.js, requires-body=true, timeout=10, tag=优惠券伪造
+http-response ^https://mapi\.xiaotucc\.com/we/user/base/getUserInfo script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/xtcc-hijack.js, requires-body=true, timeout=10, tag=用户信息伪造
+
+[MITM]
+hostname = mapi.xiaotucc.com, i.xiaotucc.com

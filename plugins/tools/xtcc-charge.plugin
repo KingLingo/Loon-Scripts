@@ -1,0 +1,13 @@
+#!name = 小兔充充-金额篡改
+#!desc = 充值金额篡改+设备注入+余额解锁 (授权白盒测试)
+#!author = KingLin
+#!icon = https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/icons/tools/xn-charge.png
+
+[Script]
+http-request ^https?:\/\/mapi\.xiaotucc\.com\/we\/wallet\/charge\/makeOrder.* script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/xtcc-charge-tamper.js, requires-body=true, timeout=20, tag=充值篡改
+http-request ^https?:\/\/mapi\.xiaotucc\.com\/we\/pay\/xt_pay\/call.* script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/xtcc-charge-tamper.js, requires-body=true, timeout=20, tag=callPay观测
+http-response ^https?:\/\/mapi\.xiaotucc\.com\/we\/user\/user_device\/list.* script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/xtcc-charge-fake.js, requires-body=true, timeout=20, tag=设备注入
+http-response ^https?:\/\/mapi\.xiaotucc\.com\/we\/wallet\/index\/balance.* script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/xtcc-charge-fake.js, requires-body=true, timeout=20, tag=余额解锁
+
+[MITM]
+hostname = mapi.xiaotucc.com

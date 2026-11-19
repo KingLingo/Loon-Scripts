@@ -135,6 +135,22 @@
                 "劫持"
             ],
             "updated": "2026-10-26"
+        },
+        {
+            "id": "cmcc-checkin",
+            "name": "中国移动签到",
+            "description": "捕获签到凭证并每天自动签到/领奖（需手动进签到页一次）",
+            "author": "KingLin",
+            "icon": "https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/icons/tools/xn-charge.png",
+            "category": "tools",
+            "path": "plugins/tools/cmcc-checkin.plugin",
+            "version": "1.0.0",
+            "tags": [
+                "中国移动",
+                "签到",
+                "cron"
+            ],
+            "updated": "2026-11-19"
         }
     ]
 }

@@ -1,0 +1,13 @@
+#!name = 中国移动签到领奖
+#!desc = 捕获 appTokenLogin 凭证，每天自动签到并领取累计/连签奖励。打开「中国移动 → 签到领流量」一次即可写入凭证。凭证过期时同样再进一次签到页。仅供安全研究/学习。
+#!author = KingLin
+#!openUrl = https://wx.10086.cn
+#!icon = https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/icons/tools/xn-charge.png
+
+[Script]
+http-request ^https:\/\/wx\.10086\.cn\/qwhdsso\/appTokenLogin script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/cmcc.cookie.js, requires-body=true, timeout=10, tag=CMCC-凭证
+
+cron "10 8 * * *" script-path=https://raw.githubusercontent.com/KingLingo/Loon-Scripts/main/scripts/tools/cmcc.task.js, timeout=30, tag=CMCC-签到, enable=true
+
+[MITM]
+hostname = wx.10086.cn
